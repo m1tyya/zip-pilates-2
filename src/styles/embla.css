@@ -1,0 +1,41 @@
+@tailwind components;
+
+@layer components {
+	.embla {
+		@apply relative;
+	}
+
+	.embla__viewport {
+		@apply w-full overflow-hidden;
+	}
+
+	.embla__container {
+		@apply flex;
+	}
+
+	.embla__slide {
+		@apply relative min-w-[80%] min-[500px]:min-w-[70%] sm:min-w-[60%] md:min-w-[45%] lg:min-w-[38%] mr-[4vw];
+	}
+}
+
+.embla__viewport {
+	/* -webkit-mask-image: linear-gradient(90deg, rgba(0, 0, 0, 1), transparent 96%); */
+	mask-image: linear-gradient(90deg, rgba(96,108,56,1) 74%, rgba(96,108,56,0.6) 100%);
+}
+
+.embla__viewport.is-draggable {
+	cursor: move;
+	cursor: grab;
+}
+
+.embla__viewport.is-dragging {
+	cursor: grabbing;
+}
+
+.embla__container {
+	display: flex;
+	user-select: none;
+	-webkit-touch-callout: none;
+	-khtml-user-select: none;
+	-webkit-tap-highlight-color: transparent;
+}

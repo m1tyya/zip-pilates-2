@@ -1,0 +1,1 @@
+export { default as TextImage } from './text_image.astro';

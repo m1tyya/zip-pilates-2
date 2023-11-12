@@ -1,0 +1,69 @@
+---
+import { Button, type ButtonProps } from 'molecules';
+import { Icon } from 'astro-icon/components';
+import {ReactComponent as HeroShape} from 'src/assets/vectors/hero-shape.svg';
+import collage1 from 'assets/images/collage-1.webp';
+import collage2 from 'assets/images/collage-2.webp';
+import { Image } from 'astro:assets';
+
+export const container_padding: [string, string] = [`page_y`, `page_x`];
+
+const st = {
+	_: `px-page_x py-page_y`,
+	flex: {
+		_: `md:flex items-center md:justify-between md:relative md:px-[5vw] lg:px-[10vw]`,
+		image: `mx-auto mt-20 md:m-0 h-auto xs:w-[calc(100%-10vw)] md:w-[35%]`,
+		'left-col': `md:mb-[3vw]`,
+	},
+	h1: ``,
+	h2: `text-center font-heading2 text-fluid-base md:text-start md:text-fluid-md max-w-[60%] max-w-full tracking-[-0.05rem]`,
+	text: `font-heading2 text-justify md:text-justify text-[calc(theme(fontSize.fluid-md)+.2rem)] font-[450] tracking-[.08rem] md:tracking-[.05rem] mx-auto mt-10 leading-[1.6] font-[400] md:font-[450] md:mx-auto md:mt-40 md:max-w-[40ch] md:leading-[2] md:first-letter:text-fluid-xl md:first-letter:leading-[.8] text-[#3B263E]`,
+	collage: `hidden lg:block opacity-[.5] absolute -z-10 h-max rounded-3xl`
+};
+
+const button_props: ButtonProps = {
+	class: 'pl-8 pr-10',
+	color: 'primary',
+	icon: 'ic:baseline-arrow-forward-ios',
+	text: 'Dowiedz się więcej'
+}
+---
+
+<div class={st._}>
+	<div class={st.flex._}>
+		<div class={st.flex[`left-col`]}>
+			<h1 class={st.h1}>Zip Pilates Studio</h1>
+			<h2 class={st.h2}>Niech twoje ciało będzie w harmonii z twoją duszą</h2>
+			<Button {...button_props} color='primary' class={`${button_props.class} hidden md:block`} />
+		</div>
+		<div class={st.flex.image}>
+			<!-- <Icon name="hero-shape" /> -->
+			<HeroShape />
+		</div>
+	</div>
+	<div class='relative'>
+		<p class={st.text}>
+			Zip Pilates Studio – powstało z pasji do metody Josepha Pilatesa, z wykorzystaniem
+			zaprojektowanego przez niego sprzętu. W przyjaznej atmosferze możesza poznawać technikę
+			Pilates, również zgłębiać swoją wiedzę oraz umiejętności. Dzięki wykorzystaniu
+			specjalistycznego sprzętu do Pilatesa – Reformer, Tower, Cadillac, Combo Chair, Ladder
+			Barrel, zharmonizujesz ciało, umysł i duch. I co jest ważne – że wszystkie nabyte
+			rezultaty osiadają w ciele na zawsze.
+		</p>
+		<Image
+		width={collage1.width}
+		height={collage1.height}
+			class:list={[st.collage, 'w-[25vw] rotate-[10deg] left-[-5vw] top-1/2 -translate-y-1/2']}
+			alt='Collage 1'
+			src={collage1}
+		/>
+		<Image
+			class:list={[st.collage, 'w-[25vw] -rotate-[15deg] right-[-5vw] top-1/2 -translate-y-1/2']}
+			alt='Collage 2'
+			src={collage2}
+		/>
+		<div class="hidden lg:flex flex-row justify-between px-[5%]">
+		</div>
+	</div>
+	<Button text={button_props.text} icon={button_props.icon} color={button_props.color} class={`${button_props.class} md:hidden bg-blue-500`} />
+</div>

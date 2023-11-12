@@ -1,0 +1,16 @@
+---
+import { ContactForm } from 'organisms';
+import { ENV } from '~/env';
+---
+
+<div class='px-page_x py-page_y grid md:grid-cols-[2fr_3fr]'>
+	<div class='mt-10 flex flex-row justify-center'>
+		<ContactForm client:load />
+	</div>
+	<iframe
+		allowfullscreen
+		class='md:(grow-[1] basis-[40%]) h-[70vh] w-full shrink'
+		loading='lazy'
+		referrerpolicy='no-referrer-when-downgrade'
+		src={`https://www.google.com/maps/embed/v1/place?q=place_id:ChIJd-9yn82h_UYRy-h9skYgTSg&key=${ENV.MAPS_API_KEY}&zoom=18`}></iframe>
+</div>

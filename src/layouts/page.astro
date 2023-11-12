@@ -1,0 +1,46 @@
+---
+import '@fontsource-variable/playfair-display';
+import '@fontsource/alegreya';
+import '@fontsource/cormorant';
+import '@fontsource/lato';
+import '@fontsource/merriweather';
+import '@fontsource/syne';
+import { Header, Footer } from 'organisms';
+import '../../src/styles/reset.css';
+import '../../src/styles/global.css';
+import '../../src/styles/typography.css';
+import '../../src/styles/fonts.css';
+import '../../src/styles/embla.css';
+import { SITE } from '~/constants';
+import { ViewTransitions } from 'astro:transitions';
+
+interface Props {
+	description?: string;
+	title?: string
+}
+
+const {title, description} = Astro.props;
+---
+
+<html lang="pl">
+  <head>
+    <meta charset="utf-8" />
+	<link rel="icon" href="/favicon.ico" sizes="32x32">
+    <link rel="icon" href="/icon.svg" type="image/svg+xml" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+	<ViewTransitions />
+	
+	{title 
+		? <title>{`${title} ${SITE.title_separator} ${SITE.title}`}</title> 
+		: <title>{title}</title>
+	}
+	{description && <meta name="description" content={description} />}
+
+	<meta name="googlebot" content="notranslate">
+  </head>
+  <body class='page overflow-x-hidden'>
+		<Header />
+		<slot />
+		<Footer />
+  </body>
+</html>

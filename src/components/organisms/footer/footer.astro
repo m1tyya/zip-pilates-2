@@ -1,0 +1,97 @@
+---
+import { PiInstagramLogoThin as Instagram, PiWhatsappLogoThin as Whatsapp } from 'react-icons/pi';
+import { CiFacebook as Facebook } from 'react-icons/ci';
+
+
+
+type Social = {
+	name: string;
+	url: string;
+	Icon: React.FunctionComponent<React.SVGProps<SVGSVGElement> & {
+		title?: string | undefined;
+	}>
+}
+
+const MENU_SOCIALS: Array<Social> = [
+	{
+		name: `Instagram`,
+		Icon: Instagram,
+		url: 'https://www.instagram.com/zip.pilates.studio/'
+	},
+	{
+		name: `Facebook`,
+		Icon: Facebook,
+		url: 'https://www.facebook.com/ZipPilatesStudio'
+	},
+	{
+		name: `Whatsapp`,
+		Icon: Whatsapp,
+		url: 'https://wa.me/48732901415'
+	}
+]
+
+const st = {
+	_: `px-page_x pt-page_y pb-6`,
+	f1: {
+		_: ` leading-[2] mt-6 md:mt-8`,
+		address: {
+			_: `flex flex-col lg:flex-row lg:justify-around`,
+			text: `hover:text-secondary-darker duration-[0.2s] font-text text-fluid-base text-gray-500 font-normal`,
+			title: `tracking-[.11rem] text-fluid-md font-merri`,
+		},
+	},
+	f2: {
+		_: `mt-10 sm:flex sm:gap-8 sm:items-center lg:mt-16`,
+		copyright: `text-fluid-sm font-text flow-root`,
+		divider: `w-[.8px] h-[16px] block bg-black hidden sm:block`,
+		link: `underscore-animation block text-fluid-sm mt-4 relative w-min sm:mt-0`,
+	},
+}
+---
+<div class={st._} transition:name='footer'>
+	<hr class='h-[1px] bg-black'>
+	<footer class={st.f1._}>
+		<address class={st.f1.address._}>
+			<div>
+				<h3 class={st.f1.address.title}>Skontaktuj się z nami</h3>
+				<a href='tel:+48 732 901 415'>
+					<p class={st.f1.address.text}>+48 732 901 415</p>
+				</a>
+				<a href='mailto:zip.pilates.studio@gmail.com'>
+					<p class={st.f1.address.text}>zip.pilates.studio@gmail.com</p>
+				</a>
+			</div>
+			<div>
+				<h3 class:list={[st.f1.address.title, `mt-5 md:mt-0`]}>Nasz adres</h3>
+				<a href='https://goo.gl/maps/NF4XZsZfhJ39fdHJ7'>
+					<p class={st.f1.address.text}>
+						Zip Pilates Studio <br />
+						Kazimierza Górskiego 1/1302 <br />
+						81-304 Gdynia <br />
+					</p>
+				</a>
+			</div>
+			<div>
+				<h3 class:list={[st.f1.address.title, `mt-5 md:mt-0`]}>Skontaktuj się z nami</h3>
+				<ul>
+					{MENU_SOCIALS.map((social) => {
+						return (
+						<a href={social.url}>
+							<li class:list={[st.f1.address.text, `mt-2 md:mt-4 text-[calc(theme(fontSize.fluid-base)+.25rem)]`]}>
+								<social.Icon className='inline-block mr-4 md:mr-6 text-fluid-xl' />
+								{social.name}
+							</li>
+						</a>
+					)})}
+				</ul>
+			</div>
+		</address>
+	</footer>
+	<footer class={st.f2._}>
+		<p class={st.f2.copyright}>© Zip Pilates Studio 2023. Wszelkie prawa zastrzeżone.</p>
+		<hr class={st.f2.divider} />
+		<a class={st.f2.link} href='/regulamin'>
+			Regulamin
+		</a>
+	</footer>
+</div>

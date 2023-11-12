@@ -1,0 +1,33 @@
+---
+import { ReactComponent as Logo } from 'assets/vectors/logo.svg';
+import logo_big from 'assets/images/logo-dark-big.png'
+
+import { Navigation } from 'molecules/navigation/navigation';
+import { Image } from 'astro:assets';
+import {MENU_LINKS} from '~/constants';
+import { Icon } from 'astro-icon/components';
+
+const st = {
+	_: `sticky top-0 left-0 drop-shadow-lg z-50 backdrop-blur-md w-full h-40 px-page_x py-6 bg-[#CECECE]/50 flex items-center justify-between overflow-x-clip`,
+	menu: {
+		color: 'black',
+		height: '40',
+		py: '6'
+	}
+};
+
+const size = 30
+---
+
+<header
+			class={st._}
+			id='nav'>
+			<a class='w-[max(5vw,7rem)] md:h-[105%] md:w-auto' href='/'>
+					<div class="w-full h-auto hover:scale-[95%] hover:-rotate-[10deg] duration-[250ms] md:hidden">
+						<!-- <Icon class='w-full h-auto' name='logo' title='Home page' /> -->
+						<Logo className='w-full h-auto' title='Home page' />
+					</div>
+					<Image class='h-full duration-[250ms] hover:scale-[104%] hidden md:block' alt='Logo' src={logo_big} />
+			</a>
+			<Navigation client:only="react" bg_color='[#E5BF9F]' links={MENU_LINKS} menu_icon={{color: st.menu.color, height: st.menu.height, padding_x: 'page_x', padding_y: st.menu.py, size: 30, weight: 'md'}} />
+</header>

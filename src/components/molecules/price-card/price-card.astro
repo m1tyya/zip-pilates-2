@@ -1,0 +1,37 @@
+---
+import { type PriceCard, PRICE_TITLE } from '~constants';
+import { Button } from '..';
+
+type Props = PriceCard;
+
+const CURRENCY = `zł`;
+const {Icon,title,price} = Astro.props;
+
+const st = {
+	_: `bg-gray-300/20 w-full border-[4px] border-primary-darker/60 rounded-[2rem] py-20 px-10 xs:px-12 max-md:max-w-[47rem] mx-auto`,
+	icon: `ml-2 w-32 h-32 md:w-40 md:h-40 flex items-center`,
+	title: `px-2 mt-6 font-heading2 tracking-[.1rem] text-fluid-xl`,
+	pricing: `grid grid-flow-col auto-cols-fr mt-6 [&>*]:text-center gap-6 [&>*]:border-black/80 [&>*]:border-2 [&>*]:rounded-2xl [&>*]:py-6 [&>*]:flex [&>*]:flex-col [&>*]:gap-4`,
+	'pricing-col': `group hover:-translate-y-[2px] duration-[200ms] ease-out`,
+	price: `italic text-fluid-xl`,
+	btn: `px-2 mt-24 [&>button]:md:px-28 md:mt-20 [&>button]:rounded-[1.7rem] [&>button]:border-[3px] [&>button]:border-black/80 [&>button]:py-6 [&>button]:mx-auto [&>button]:cursor-pointer`,
+}
+---
+
+<div class={st._}>
+	<div class={st.icon}>
+		<Icon width='100%' height='auto' />
+	</div>
+	<h3 class={st.title}>{title}</h3>
+	<div class={st.pricing}>
+		<div class={st['pricing-col']}>
+			<h4>{PRICE_TITLE.SINGLE}</h4>
+			<p class={st.price}>{price.single}{' '}{CURRENCY}</p>
+		</div>
+		<div class={st['pricing-col']}>
+			<h4>{PRICE_TITLE.PASS}</h4>
+			<p class={st.price}>{price.pass}{' '}{CURRENCY}</p>
+		</div>
+	</div>
+	<Button color='none' text='Zapisz się' icon='ic:baseline-arrow-forward-ios' class={st.btn} />
+</div>

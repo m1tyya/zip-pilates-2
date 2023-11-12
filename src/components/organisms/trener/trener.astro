@@ -1,0 +1,25 @@
+---
+import { Button, type ButtonProps, TextImage } from 'molecules';
+import trener from 'images/trener.jpg';
+import trener2 from 'images/trener2.jpg';
+
+const button_props: ButtonProps = {
+	color: 'secondary',
+	icon: 'ic:baseline-arrow-forward-ios',
+	text: 'Biographia'
+}
+
+const st = {
+	_: 'px-page_x py-page_y md:mt-32 lg:mt-52'
+}
+
+const text = 'Nazywam się Tetyana Kantor i jestem zalożycielką Zip Pilates Studio w Gdyni (Trójmiasto). Ukończyłam dwuletnie szkolienie Lolita’s Legacy według metody Lolity San Miguel (Floryda, USA), które uprawnia mnie do pracy na pilatesowym sprzęcie na wszystkich poziomach zaawansowania.';
+
+const text2 = 'Lolita San Miguel jest bezpośrednią uczennicą Josepha Pilatesa (First Generation Pilates Master Teacher).Ukończyłam również skolienie Michaela Kinga, założyciela brytyjskiej szkoły MK Pilates, a także brałam udział w warsztatach Alana Herdmana.';
+---
+
+<div class={st._}>
+	<TextImage text_side='left' text={text} alt='Trener' img={trener} />
+	<TextImage class='mt-60' text_side='right' text={text2} alt='Trener 2' img={trener2} />
+	<Button {...button_props} class="md:hidden" />
+</div>

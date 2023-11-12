@@ -1,0 +1,23 @@
+---
+import { type CollectionEntry } from 'astro:content';
+import { Post } from '~/components/templates/post';
+import { getPosts } from '~/utils/posts';
+
+type Props = CollectionEntry<'blog'>;
+
+export async function getStaticPaths() {
+  const posts = await getPosts();
+
+  return posts.map(post => ({
+	params: { slug: post.slug },
+	props: post,
+  }))
+}
+
+const post = Astro.props;
+---
+
+{ post 
+	? <Post post={post} />
+	: <div>Error</div>
+}

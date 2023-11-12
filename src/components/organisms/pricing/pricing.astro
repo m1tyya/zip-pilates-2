@@ -1,0 +1,29 @@
+---
+import { PriceCard } from 'molecules';
+import { PRICE_CARDS } from '~constants';
+
+const st = {
+	title: `mx-auto`,
+	grid: `grid md:grid-cols-2 xl:grid-cols-3 gap-[6vw] mt-[6vw]`,
+	text: `mt-10 text-fluid-md leading-[2em]`
+};
+
+
+---
+
+<section class='py-page_y px-[max(30px,3vw)]'>
+	<h2 class={st.title}>Pakiety treningowe</h2>
+	<div class={st.grid}>
+		{
+			PRICE_CARDS.map((card) => (
+				<PriceCard {...card}  />
+			))
+		}
+	</div>
+	<p class={st.text}>
+		* karnet 8 albo 4 zajęcia ważny 30 dni  <br>
+		** cena za 1 osobę, każde zajęcie trwa 55 min <br>
+		*** Cennik zobowiązuje od 01/09/2023 r <br>
+	</p>
+	
+</section>

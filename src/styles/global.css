@@ -1,0 +1,15 @@
+.page {
+	@apply font-text font-[300] text-fluid-base;
+}
+
+.underscore-animation {
+	@apply overflow-hidden;
+}
+
+.underscore-animation::after {
+	@apply absolute bg-black bottom-0 left-0 opacity-100 content-[''] h-[.8px] -translate-x-full transition-all duration-[400ms] w-full hover:translate-x-0 group-hover/underscore:translate-x-0;
+}
+
+.underscore-animation-active::after {
+	@apply absolute bg-black bottom-0 left-0 opacity-100 content-[''] h-[.8px] w-full translate-x-0;
+}

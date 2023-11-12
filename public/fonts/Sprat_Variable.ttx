@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ttFont sfntVersion="\x00\x01\x00\x00" ttLibVersion="4.29">
+
+  <fvar>
+
+    <!-- Width -->
+    <Axis>
+      <AxisTag>wdth</AxisTag>
+      <Flags>0x0</Flags>
+      <MinValue>100.0</MinValue>
+      <DefaultValue>100.0</DefaultValue>
+      <MaxValue>200.0</MaxValue>
+      <AxisNameID>256</AxisNameID>
+    </Axis>
+
+    <!-- Weight -->
+    <Axis>
+      <AxisTag>wght</AxisTag>
+      <Flags>0x0</Flags>
+      <MinValue>10.0</MinValue>
+      <DefaultValue>10.0</DefaultValue>
+      <MaxValue>200.0</MaxValue>
+      <AxisNameID>257</AxisNameID>
+    </Axis>
+
+    <!-- Condensed Thin -->
+    <NamedInstance flags="0x0" subfamilyNameID="258">
+      <coord axis="wdth" value="100.0"/>
+      <coord axis="wght" value="10.0"/>
+    </NamedInstance>
+
+    <!-- Condensed Light -->
+    <NamedInstance flags="0x0" subfamilyNameID="259">
+      <coord axis="wdth" value="100.0"/>
+      <coord axis="wght" value="40.0"/>
+    </NamedInstance>
+
+    <!-- Condesed Regular -->
+    <NamedInstance flags="0x0" subfamilyNameID="260">
+      <coord axis="wdth" value="100.0"/>
+      <coord axis="wght" value="100.0"/>
+    </NamedInstance>
+
+    <!-- Condensed Medium -->
+    <NamedInstance flags="0x0" subfamilyNameID="261">
+      <coord axis="wdth" value="100.0"/>
+      <coord axis="wght" value="120.0"/>
+    </NamedInstance>
+
+    <!-- Condensed Bold -->
+    <NamedInstance flags="0x0" subfamilyNameID="262">
+      <coord axis="wdth" value="100.0"/>
+      <coord axis="wght" value="175.0"/>
+    </NamedInstance>
+
+    <!-- Condensed Black -->
+    <NamedInstance flags="0x0" subfamilyNameID="263">
+      <coord axis="wdth" value="100.0"/>
+      <coord axis="wght" value="200.0"/>
+    </NamedInstance>
+
+    <!-- Regular Thin -->
+    <NamedInstance flags="0x0" subfamilyNameID="264">
+      <coord axis="wdth" value="122.0"/>
+      <coord axis="wght" value="10.0"/>
+    </NamedInstance>
+
+    <!-- Regular light -->
+    <NamedInstance flags="0x0" subfamilyNameID="265">
+      <coord axis="wdth" value="122.0"/>
+      <coord axis="wght" value="40.0"/>
+    </NamedInstance>
+
+    <!-- Regular -->
+    <NamedInstance flags="0x0" subfamilyNameID="266">
+      <coord axis="wdth" value="122.0"/>
+      <coord axis="wght" value="100.0"/>
+    </NamedInstance>
+
+    <!-- Regular Medium -->
+    <NamedInstance flags="0x0" subfamilyNameID="267">
+      <coord axis="wdth" value="122.0"/>
+      <coord axis="wght" value="120.0"/>
+    </NamedInstance>
+
+    <!-- Regular Bold -->
+    <NamedInstance flags="0x0" subfamilyNameID="268">
+      <coord axis="wdth" value="122.0"/>
+      <coord axis="wght" value="175.0"/>
+    </NamedInstance>
+
+    <!-- Regular Black -->
+    <NamedInstance flags="0x0" subfamilyNameID="269">
+      <coord axis="wdth" value="122.0"/>
+      <coord axis="wght" value="200.0"/>
+    </NamedInstance>
+
+    <!-- Extended Thin -->
+    <NamedInstance flags="0x0" subfamilyNameID="270">
+      <coord axis="wdth" value="200.0"/>
+      <coord axis="wght" value="10.0"/>
+    </NamedInstance>
+
+    <!-- Extended Light -->
+    <NamedInstance flags="0x0" subfamilyNameID="271">
+      <coord axis="wdth" value="200.0"/>
+      <coord axis="wght" value="40.0"/>
+    </NamedInstance>
+
+    <!-- Extended regular -->
+    <NamedInstance flags="0x0" subfamilyNameID="272">
+      <coord axis="wdth" value="200.0"/>
+      <coord axis="wght" value="100.0"/>
+    </NamedInstance>
+
+    <!-- Extended Medium -->
+    <NamedInstance flags="0x0" subfamilyNameID="273">
+      <coord axis="wdth" value="200.0"/>
+      <coord axis="wght" value="120.0"/>
+    </NamedInstance>
+
+    <!-- Extended Bold -->
+    <NamedInstance flags="0x0" subfamilyNameID="274">
+      <coord axis="wdth" value="200.0"/>
+      <coord axis="wght" value="175.0"/>
+    </NamedInstance>
+
+    <!-- Extended Black -->
+    <NamedInstance flags="0x0" subfamilyNameID="275">
+      <coord axis="wdth" value="200.0"/>
+      <coord axis="wght" value="200.0"/>
+    </NamedInstance>
+  </fvar>
+
+</ttFont>

@@ -1,0 +1,7 @@
+h1 {
+	@apply text-center font-heading2 text-fluid-5xl text-primary-darker font-medium md:text-start md:text-fluid-3xl;
+}
+
+h2 {
+	@apply text-center text-fluid-2xl font-heading font-[500];
+}
